@@ -1,13 +1,18 @@
 
+//TODO: use document.ready
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    var lat = position.coords.latitude;
-    var long = position.coords.longitude;
-    getWeather(lat,long);
-    })
-  };
 
+// if (navigator.geolocation) {
+//   navigator.geolocation.getCurrentPosition(function(position) {
+//     var lat = position.coords.latitude;
+//     var long = position.coords.longitude;
+//     getWeather(lat,long);
+//     })
+//   };
+
+//Test purposes
+getWeather(35,139);
+   
 
 // 
 
@@ -22,7 +27,7 @@ function getWeather(lat, long) {
   	fetch(myReqDynamic, { method: reqType})
     	.then(resp => resp.json())
     	.then(data => {
-      		updateDataToUI(data.name, data.weather, data.main.temp);
+      		updateDataToUI(data.name, data.weather, data.main.temp, data.weather.icon);
     	})
     	.catch((err) => {
     		console.error(err);
@@ -30,11 +35,12 @@ function getWeather(lat, long) {
 }
 
 
-function updateDataToUI(cityName, weather, temp){
+function updateDataToUI(cityName, weather, temp, icon){
 
 	//IMplement here
 	$(".city").text(cityName);
 	$(".temp").text(temp);
 	$(".status").text(weather[0]["description"]);	
+	$(".icon").html(`<img src="${weather[0].icon}" />`);
 }
 
