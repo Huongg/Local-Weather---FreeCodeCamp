@@ -1,81 +1,47 @@
-.weather
-    {
-        display: flex;
-        flex-flow: column wrap;
-        box-shadow: 0px 1px 10px 0px #cfcfcf;
-        overflow: hidden;
+
+html {
+    background-color: #F5F5DC;
+}
+.weather{
+ ;
+    padding: 80px;
+    margin: 30%;
+    box-shadow: 0px 1px 10px 0px #cfcfcf;
+
+
     }
 
-        .weather .current
-        {
-            display: flex;
-            flex-flow: row wrap;
-            background-image: url("/Content/images/shared/misc/london-view.png");
-            background-repeat: repeat-x;
-            color: white;
-            padding: 20px;
-            text-shadow: 1px 1px #F68D2E;
+        .weather .current{
+        color: #2F4F4F;
+        padding: 20px;
+        text-shadow: 4px 3px white;
         }
 
-            .weather .current .info
-            {
-                display: flex;
-                flex-flow: column wrap;
-                justify-content: space-around;
-                flex-grow: 2;
+            .weather .current .info{
+                
             }
 
                 .weather .current .info .city
                 {
-                    font-size: 26px;
+                    font-size: 36px;
                 }
 
                 .weather .current .info .temp
                 {
-                    font-size: 56px;
+                    font-size: 66px;
                 }
 
-                .weather .current .info .wind
+                .weather .current .info .btn
                 {
-                    font-size: 24px;
+                    font-size: 15px;
+                    border-radius: 5px;
                 }
 
             .weather .current .icon
             {
                 text-align: center;
-                font-size: 64px;
+                font-size: 74px;
                 flex-grow: 1;
             }
 
-    /*    .weather .future
-        {
-            display: flex;
-            flex-flow: row nowrap;
-        }
-
-            .weather .future .day
-            {
-                flex-grow: 1;
-                text-align: center;
-                cursor: pointer;
-            }
-
-                .weather .future .day:hover
-                {
-                    color: #fff;
-                    background-color: #F68D2E;
-                }
-
-                .weather .future .day h3
-                {
-                    text-transform: uppercase;
-                }
-
-                .weather .future .day p
-                {
-                    font-size: 28px;
-                }
-
-
-
-    */
+    
