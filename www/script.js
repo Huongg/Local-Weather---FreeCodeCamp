@@ -4,6 +4,7 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
+    getWeather(lat,long);
     })
   };
 
@@ -18,7 +19,7 @@ function getWeather(lat, long) {
 
 	var reqType = "get";
   	
-  	fetch(myReqStatic, { method: reqType})
+  	fetch(myReqDynamic, { method: reqType})
     	.then(resp => resp.json())
     	.then(data => {
       		updateDataToUI(data.name, data.weather, data.main.temp);
@@ -37,4 +38,3 @@ function updateDataToUI(cityName, weather, temp){
 	$(".status").text(weather[0]["description"]);	
 }
 
-getWeather(4., 3.);
