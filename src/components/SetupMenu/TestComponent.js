@@ -20,7 +20,6 @@ class Test extends Component {
 
 
   	// Logic
-
 	updateChosenUnit() {
 		this.setState ({
 			chosenUnit: AppStore.getChosenUnit()

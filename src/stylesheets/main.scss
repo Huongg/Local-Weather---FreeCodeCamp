@@ -1,5 +1,18 @@
+@import
+  'abstracts/variables';
+
+@import 'base/typography';
+
+@import './components/buttons';
+
+@import 'pages/mainPage';
+
+@import 'vendors/bootstrap';
+
+
+
 
 
 body {
-  color: rgb(255, 0, 0);
+  background: rgb(255, 0, 0);
 }

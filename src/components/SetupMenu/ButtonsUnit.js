@@ -16,7 +16,7 @@ class ButtonsUnit extends Component {
 	handleClick(e) {
 	
 		let chosenUnit = e.target.id;
-		if(chosenUnit === "degreeC" || chosenUnit === "degreeC") {
+		if(chosenUnit === "degreeC" || chosenUnit === "degreeF") {
 			AppActions.chooseTempUnit(chosenUnit);
 			this.setState({
 				chosenUnit: AppStore.getChosenUnit()
@@ -36,7 +36,7 @@ class ButtonsUnit extends Component {
 			    <Button id="degreeC" bsStyle="primary" bsSize="large" onClick={this.handleClick}>*C</Button>
 			    <Button id="degreeF" bsStyle="primary" bsSize="large" onClick={this.handleClick}>*F</Button>
 			  </ButtonToolbar>
-			  <Button id="ok" bsStyle="primary" bsSize="large" onClick={this.handleClick}>OK</Button>
+			  <Button id="ok" bsStyle="primary" bsSize="small" onClick={this.handleClick}>OK</Button>
 			</div>
 		)
 	}
