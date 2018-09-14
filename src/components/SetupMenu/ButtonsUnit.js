@@ -10,7 +10,6 @@ class ButtonsUnit extends Component {
 			chosenUnit: undefined,
 			finishedSetUp: undefined
 		}
-
 		this.handleClick = this.handleClick.bind(this);
 	}
 
@@ -27,26 +26,17 @@ class ButtonsUnit extends Component {
 			this.setState({
 				finishedSetUp: AppStore.getFinishedSetUp()
 			})
-		}
-		
+		}		
 	}
 
 	render() {
 		return(
 			<div>
 			  <ButtonToolbar>
-			    <Button id="degreeC" bsStyle="primary" bsSize="large" onClick={this.handleClick}>
-			     *C
-			    </Button>
-
-			    <Button id="degreeF" bsStyle="primary" bsSize="large" onClick={this.handleClick}>
-			      *F
-			    </Button>
+			    <Button id="degreeC" bsStyle="primary" bsSize="large" onClick={this.handleClick}>*C</Button>
+			    <Button id="degreeF" bsStyle="primary" bsSize="large" onClick={this.handleClick}>*F</Button>
 			  </ButtonToolbar>
-
-			    <Button id="ok" bsStyle="primary" bsSize="large" onClick={this.handleClick}>OK</Button>
-
-
+			  <Button id="ok" bsStyle="primary" bsSize="large" onClick={this.handleClick}>OK</Button>
 			</div>
 		)
 	}

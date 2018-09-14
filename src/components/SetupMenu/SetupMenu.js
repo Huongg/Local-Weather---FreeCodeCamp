@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Jumbotron} from 'react-bootstrap';
 import ButtonsUnit from './ButtonsUnit.js';
+import TestComponent from './TestComponent.js';
 
 class SetupMenu extends Component {
 
@@ -18,7 +19,9 @@ class SetupMenu extends Component {
 				   Unit setup only takes you a few seconds
 				</p>
 				<ButtonsUnit />
+				<TestComponent></TestComponent>
 			</Jumbotron>
+			
 
 		)
 	}

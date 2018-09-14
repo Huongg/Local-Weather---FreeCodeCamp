@@ -1,5 +1,5 @@
-import AppStore from '../libs/AppStore.js';
 
-const _chosenUnit = AppStore.getChosenUnit();
 
-console.log(_chosenUnit);
+function getLocalWeather(chosenUnit) {
+	console.log(chosenUnit);
+}
