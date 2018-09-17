@@ -3,7 +3,7 @@ import Dates from './Dates.js';
 import CurrentTemp from './CurrentTemp.js';
 import SimilarTemps from './SimilarTemps.js';
 
-import {getCurrentWeather} from '../../utils/getCurrentWeather';
+// import {getCurrentWeather} from '../../utils/getCurrentWeather';
 import AppStore from '../../libs/AppStore.js';
 
 class MainWeather extends Component {
@@ -32,7 +32,6 @@ class MainWeather extends Component {
 	}
 
 	render() {
-		let currentWeather = getCurrentWeather(this.state.chosenUnit);
 		return(
 			<div>
 				<Dates />

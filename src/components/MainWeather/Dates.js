@@ -6,13 +6,13 @@ class Dates extends Component {
 		return(
 			<ButtonToolbar>
 		        <ButtonGroup>
-		          <Button>M</Button>
-		          <Button>T</Button>
-		          <Button>W</Button>
-		          <Button>T</Button>
-		          <Button>F</Button>
-		          <Button>S</Button>
-		          <Button>S</Button>
+		          <Button>Mon</Button>
+		          <Button>Tue</Button>
+		          <Button>Wed</Button>
+		          <Button>Thu</Button>
+		          <Button>Fri</Button>
+		          <Button>Sat</Button>
+		          <Button>Sun</Button>
 		        </ButtonGroup>
 		    </ButtonToolbar>
 		)
