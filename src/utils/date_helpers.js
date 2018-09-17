@@ -10,32 +10,33 @@ const DaysEnum = Object.freeze({
 
 function getCurrentDate() {
 	let d = new Date();
+
+	
 	let todayKey= d.getDay();
 	return todayKey;
 }
 
+// function getCurrentWeekDays(DaysEnum, currentDate) {
+// 	const weekDays = [];
+// 	let keys = Object.keys(DaysEnum);
+
+
+// 	for(let i = currentDate; i<keys.length; i++) {
+// 		weekDays.push(i);
+// 	}
+
+// 	let j = currentDate;
+// 	if(weekDays.length < keys.length) {
+// 		while(j>0) {
+// 			weekDays.push(currentDate-j);
+// 			j--;
+// 		}
+// 	}
+// 	return weekDays;
+
+// }
+
 function getCurrentWeekDays(DaysEnum, currentDate) {
-	const weekDays = [];
-	let keys = Object.keys(DaysEnum);
-
-
-	for(let i = currentDate; i<keys.length; i++) {
-		weekDays.push(i);
-	}
-
-	let j = currentDate;
-	if(weekDays.length < keys.length) {
-		while(j>0) {
-			weekDays.push(currentDate-j);
-			j--;
-		}
-	}
-
-	return weekDays;
-
-}
-
-function getCurrentWeekDaysSlice(DaysEnum, currentDate) {
 	let keys = Object.keys(DaysEnum);
 
 	let beforeToday = keys.slice(0, currentDate);
@@ -47,5 +48,6 @@ function getCurrentWeekDaysSlice(DaysEnum, currentDate) {
 module.exports = {
 	DaysEnum : DaysEnum,
 	getCurrentDate : getCurrentDate,
-	getCurrentWeekDays : getCurrentWeekDays
+	getCurrentWeekDays : getCurrentWeekDays,
 }
+
