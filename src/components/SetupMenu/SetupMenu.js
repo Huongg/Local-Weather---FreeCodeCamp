@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Jumbotron} from 'react-bootstrap';
 import ButtonsUnit from './ButtonsUnit.js';
 import TestComponent from './TestComponent.js';
 
@@ -7,7 +6,7 @@ class SetupMenu extends Component {
 
 	render() {
 		return(
-			<Jumbotron className="SetupMenu-container">
+			<div className="setupMenu-container">
 				<h1>Hello, sunshine!</h1>
 			  	<p>
 				    This is a simple weather application that shows you the current local weather and
@@ -20,7 +19,7 @@ class SetupMenu extends Component {
 				</p>
 				<ButtonsUnit />
 				<TestComponent></TestComponent>
-			</Jumbotron>
+			</div>
 			
 
 		)

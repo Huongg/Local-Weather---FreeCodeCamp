@@ -1,7 +1,21 @@
-
+.btn-toolbar {
+	justify-content:center;
+	margin-bottom: $margin;
+}
 
 .btn-lg {
-	margin: 20px;
-	background: rgb(255, 0, 0);
+	margin:20px;
+	background-color: $patina;
+	font-weight: $font-weight-bold;
+	width: $button-width;
+	height: $button-height;
+}
+
+.btn-sm {
+	width: ($button-width)*2 + $margin;
+	background-color: $patina;
+	height: $button-height;
+    font-weight: $font-weight-bold;
+    margin-bottom: $margin;
 }
 

@@ -1,5 +1,5 @@
-@import
-  'abstracts/variables';
+@import 'abstracts/variables',
+  		'abstracts/colours';
 
 @import 'base/typography';
 
@@ -11,8 +11,15 @@
 
 
 
-
-
 body {
-  background: rgb(255, 0, 0);
+	background-color: $iron;
+	text-align: center;
+	font-family: $font, monospace;
+	color: $dark-grey;
+	padding: $margin;
+	line-height: 1.4;
+}
+
+#root {
+	height: 600px;
 }
