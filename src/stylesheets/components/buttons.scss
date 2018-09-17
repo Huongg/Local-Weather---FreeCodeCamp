@@ -1,6 +1,7 @@
 .btn-toolbar {
 	justify-content: center;
 	margin-bottom: $margin;
+	margin-top: $margin;
 }
 
 .btn-lg {
@@ -19,3 +20,6 @@
     margin-bottom: $margin;
 }
 
+.btn-default {
+	width: $button-width/2;
+}
