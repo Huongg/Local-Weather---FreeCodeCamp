@@ -8,11 +8,25 @@ class CurrentTemp extends Component {
 		this.defaultWidth = 40;
 	}
 	render() {
+		let apiResponse  = this.props.apiResponse;
+		console.log(apiResponse);
+		
+		let temp, name, description, humidity = "N/A";
+		if(apiResponse.hasOwnProperty("main")){
+			temp = apiResponse.main.temp;
+			name = apiResponse.name;
+			description = apiResponse.weather[0].description;
+			humidity = apiResponse.main.humidity;
+		}
+
 		return(
 			<div className="temp-container">
 		      <Jumbotron>
-		        <h1 className="temp">18</h1>
-		        <p className="description">Partly Cloudy</p>
+		      	<h1 className="country">{name}</h1>
+		        <h1 className="temp">{temp}
+		        	<span>&deg;C</span>
+		        </h1>
+		        <p className="description">{description}</p>
 		        <Grid>
 		        	<Row>
 					    <Col md={6}>

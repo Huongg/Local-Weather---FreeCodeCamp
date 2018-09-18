@@ -14,7 +14,7 @@ describe("Testing date functions work as expected", function() {
 
   it("Should return current date of the week", function() {
     let res = date_helpers.getCurrentDate();
-    expect(res).toEqual(1);
+    expect(res).toEqual(2);
   });
 
   
