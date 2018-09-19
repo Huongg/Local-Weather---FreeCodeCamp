@@ -8,7 +8,6 @@ class ButtonsUnit extends Component {
 		super(props);
 		this.state = {
 			chosenUnit: undefined,
-			chosenSpeed: undefined,
 			finishedSetUp: undefined
 		}
 		this.handleClick = this.handleClick.bind(this);

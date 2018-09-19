@@ -1,20 +1,29 @@
 .temp-container {
 	width: 700px;
 	margin-left: 25%;
+	
+	.jumbotron {
+		background: $cream;
+		box-shadow: 10px 10px 5px $light-grey;
+	}
 }
 
 .similartemps-container {
 	max-width: 700px;
 	margin-left: 25%;
 
-	.col-md-4 {
-		height: 100px;
-		border-radius: 5px;
-		border: 1px solid;
-		box-shadow: 10px 10px 5px $light-grey;
-	}
+	// .col-md-4 {
+	// 	height: 100px;
+	// 	border-radius: 5px;
+	// 	border: 1px solid;
+	// 	box-shadow: 10px 10px 5px $light-grey;
+	// }
 }
 
 
 	
+.img-thumbnail {
+	width: 220px;
+	height: 120px;
+}
 	

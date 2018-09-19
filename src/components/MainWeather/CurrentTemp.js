@@ -15,11 +15,8 @@ class CurrentTemp extends Component {
 	render() {
 		const { apiResponse } = this.props;
 		const { chosenUnit } = this.props;
-		// const { chosenSpeed } = this.props;
 
-		// console.log(`speed is: ${chosenSpeed}`);
-
- 		let name, dailyForecast, temp, iconCode, iconSrc, description, humidity, wind = "N/A";
+ 		let name, dailyForecast, temp, iconCode, iconSrc, description = "N/A";
 		if(apiResponse.hasOwnProperty("list")){
 			name = apiResponse.city.name;
 
@@ -29,8 +26,6 @@ class CurrentTemp extends Component {
 			iconCode = dailyForecast[0].weather[0].icon;
 			iconSrc = `http://openweathermap.org/img/w/${iconCode}.png` 
 			description = dailyForecast[0].weather[0].description;
-			humidity = dailyForecast[0].main.humidity;
-			wind = dailyForecast[0].wind.speed;
  		}
 
 		return(
