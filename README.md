@@ -3,6 +3,7 @@
 
 ## About
 This project was bootstrapped with [Create React App], [FLux] and [SCSS].
+This project is using sources from [OpenWeatherMap](https://openweathermap.org/forecast5)
 
 
 ## Development Setup
