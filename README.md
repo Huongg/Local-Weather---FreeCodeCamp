@@ -15,9 +15,9 @@ This project was bootstrapped with [Create React App], [FLux] and [SCSS].
     
 3. Clone this repo:
     ```cli
-    git clone https://github.com/chingu-voyage6/Geckos-Team-05.git && cd Geckos-Team-05
+    git clone https://github.com/Huongg/Local-Weather.git && cd Local-Weather
     ```
-4. Install Node packages:
+4. Install packages:
     ```cli
     npm install
     ```
