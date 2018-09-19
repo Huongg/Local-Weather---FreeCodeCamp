@@ -31,7 +31,10 @@ class App extends Component {
 	render() {
 	    return (
 	    	<div>
-				<MainWeather />
+	    		{this.state.finishedSetUp
+	    			? <MainWeather />
+	    			: <SetupMenu />			
+	    		}
 			</div>
 	    )
 	}

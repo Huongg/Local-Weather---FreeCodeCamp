@@ -5,7 +5,8 @@ class Test extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			chosenUnit:undefined
+			chosenUnit:undefined,
+			chosenSpeed: undefined
 		}
 	}
 	
@@ -18,7 +19,6 @@ class Test extends Component {
 		this.updateChosenUnit();
   	}
 
-
   	// Logic
 	updateChosenUnit() {
 		this.setState ({
@@ -29,8 +29,11 @@ class Test extends Component {
 	render() {
 
 		return(
+			<div>
 			<p>{this.state.chosenUnit}</p>
-		)
+			<p>{this.state.chosenSpeed}</p>
+			</div>
+		)	
 	}
 }
 

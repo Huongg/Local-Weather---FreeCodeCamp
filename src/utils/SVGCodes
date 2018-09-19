@@ -6,3 +6,19 @@ SUN
 
 BREEZE
 <div>Icons made by <a href="https://www.flaticon.com/authors/hirschwolf" title="hirschwolf">hirschwolf</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+
+http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}
+
+APIkey= 26b3fd73e61dc700f749547b3833c188
+
+api.openweathermap.org/data/2.5/forecast?q=London,us&mode=xml&APPID=26b3fd73e61dc700f749547b3833c188
+
+Gmail ex: 
+api.openweathermap.org/data/2.5/weather?q=London,uk&units=imperial&APPID=26b3fd73e61dc700f749547b3833c188
+
+
+
+api.openweathermap.org/data/2.5/weather?lat=35&lon=139&APPID=26b3fd73e61dc700f749547b3833c188
+
+let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`

@@ -8,6 +8,7 @@ class ButtonsUnit extends Component {
 		super(props);
 		this.state = {
 			chosenUnit: undefined,
+			chosenSpeed: undefined,
 			finishedSetUp: undefined
 		}
 		this.handleClick = this.handleClick.bind(this);
@@ -16,27 +17,33 @@ class ButtonsUnit extends Component {
 	handleClick(e) {
 	
 		let chosenUnit = e.target.id;
-		if(chosenUnit === "degreeC" || chosenUnit === "degreeF") {
-			AppActions.chooseTempUnit(chosenUnit);
-			this.setState({
-				chosenUnit: AppStore.getChosenUnit()
-			})
-		} else {
-			AppActions.clickOk(chosenUnit);
-			this.setState({
-				finishedSetUp: AppStore.getFinishedSetUp()
-			})
-		}		
+
+		switch (chosenUnit) {
+		    case "degreeC":
+		    	AppActions.chooseTempUnit("metric");
+		        this.setState({chosenUnit: AppStore.getChosenUnit()});
+		        break;
+		    case "degreeF":
+		    	AppActions.chooseTempUnit("imperial");
+		        this.setState({chosenUnit: AppStore.getChosenUnit()});
+		        break;
+		    case "ok":
+		    	AppActions.clickOk(chosenUnit);
+		        this.setState({finishedSetUp: AppStore.getFinishedSetUp()});
+		        break;
+		}
+		
 	}
 
 	render() {
 		return(
 			<div>
 			  <ButtonToolbar>
-			    <Button id="degreeC" bsStyle="primary" bsSize="large" onClick={this.handleClick}>*C</Button>
-			    <Button id="degreeF" bsStyle="primary" bsSize="large" onClick={this.handleClick}>*F</Button>
+			    <Button id="degreeC" bsSize="large" className="temp-unit" style={{"font-size": "20px"}} onClick={this.handleClick}>&deg;C</Button>
+			    <Button id="degreeF" bsSize="large" className="temp-unit" style={{"font-size": "20px"}} onClick={this.handleClick}>&deg;F</Button>
 			  </ButtonToolbar>
-			  <Button id="ok" bsStyle="primary" bsSize="small" onClick={this.handleClick}>OK</Button>
+			  
+			  <Button id="ok" bsStyle="primary" bsSize="small" style={{"font-size": "20px"}} onClick={this.handleClick}>OK</Button>
 			</div>
 		)
 	}

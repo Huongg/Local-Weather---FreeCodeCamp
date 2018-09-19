@@ -1,8 +1,9 @@
 import AppDispatcher from './AppDispatcher';
 import { EventEmitter } from 'events';
 
-let _chosenUnit = undefined
-let _finishedSetUp = undefined
+let _chosenUnit = undefined;
+let _chosenSpeed = undefined;
+let _finishedSetUp = undefined;
 
 class AppStore extends EventEmitter {
     constructor() {
@@ -14,7 +15,9 @@ class AppStore extends EventEmitter {
         this.emit(eventName);
     }
 
-
+    /*
+        GET AND SET FOR TEMP UNIT
+    */
     getChosenUnit() {
          return _chosenUnit;
     }
@@ -23,6 +26,21 @@ class AppStore extends EventEmitter {
         _chosenUnit = input;
     }
 
+    /*
+        GET AND SET FOR SPEED UNIT
+    */
+    getSpeedUnit() {
+         return _chosenSpeed;
+    }
+
+    chooseSpeedUnit(input) {
+        _chosenSpeed = input;
+    }
+
+
+    /*
+        GET AND SET FOR WHEN USER CLICKED OK
+    */
     getFinishedSetUp() {
         return _finishedSetUp;
     }
