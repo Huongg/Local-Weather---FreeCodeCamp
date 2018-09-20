@@ -13,20 +13,40 @@ class CurrentTemp extends Component {
 
 
 	render() {
-		const { apiResponse } = this.props;
-		const { chosenUnit } = this.props;
+		// const { apiResponse } = this.props;
+		const {chosenUnit} = this.props;
+		const {cityName}=this.props;
+		const {tempInfo}= this.props;
+		const{activeDate}=this.props;
 
- 		let name, dailyForecast, temp, iconCode, iconSrc, description = "N/A";
-		if(apiResponse.hasOwnProperty("list")){
-			name = apiResponse.city.name;
+		let tempData = {};
+		let name, dailyForecast, temp, iconCode, iconSrc, description= "N/A";
+		let date;
 
-			dailyForecast = apiResponse.list;
+		// if(activeDate) {
+			if(tempInfo && tempInfo.length > 0) {
+				date= parseInt(activeDate);
 
-			temp = dailyForecast[0].main.temp;
-			iconCode = dailyForecast[0].weather[0].icon;
-			iconSrc = `http://openweathermap.org/img/w/${iconCode}.png` 
-			description = dailyForecast[0].weather[0].description;
- 		}
+				tempData = tempInfo[date];
+				temp = Math.round(tempData.main.temp);
+				iconCode = tempData.weather.icon;
+				iconSrc = `http://openweathermap.org/img/w/${iconCode}.png` 
+				description = tempData.weather.description;
+			}
+		
+		// }
+
+		console.log("date is:");
+		console.log(date);
+
+		console.log(`final data is:`);
+		console.log(tempData);
+ 		
+
+		if(cityName) {
+			name = cityName;
+		}
+
 
 		return(
 			<div className="temp-container">
