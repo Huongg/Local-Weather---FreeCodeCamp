@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, ButtonToolbar } from 'react-bootstrap';
-import AppActions from '../../libs/AppActions';
-import AppStore from '../../libs/AppStore.js';
+import AppActions from '../../actions/AppActions';
+import AppStore from '../../store/AppStore.js';
 
 class ButtonsUnit extends Component {
 	constructor(props) {

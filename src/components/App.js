@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SetupMenu from './SetupMenu/SetupMenu.js';
 import MainWeather from './MainWeather/MainWeather.js';
-import AppStore from '../libs/AppStore.js';
+import AppStore from '../store/AppStore.js';
 
 
 class App extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AppStore from '../../libs/AppStore.js';
+import AppStore from '../../store/AppStore.js';
 
 class Test extends Component {
 	constructor(props) {

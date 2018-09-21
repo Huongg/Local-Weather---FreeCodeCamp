@@ -1,14 +1,14 @@
-import AppDispatcher from './AppDispatcher';
+import AppDispatcher from '../dispatcher/AppDispatcher';
 import { EventEmitter } from 'events';
 
 let _chosenUnit = undefined;
-let _chosenSpeed = undefined;
 let _finishedSetUp = undefined;
+let _data = undefined;
 
 class AppStore extends EventEmitter {
     constructor() {
         super();
-        this.dispatchToken = AppDispatcher.register(this.dispatcherCallback.bind(this))
+        this.dispatchToken = AppDispatcher.register(this.dispatcherCallback.bind(this));
     }
 
     emitChange(eventName) {
@@ -27,18 +27,6 @@ class AppStore extends EventEmitter {
     }
 
     /*
-        GET AND SET FOR SPEED UNIT
-    */
-    getSpeedUnit() {
-         return _chosenSpeed;
-    }
-
-    chooseSpeedUnit(input) {
-        _chosenSpeed = input;
-    }
-
-
-    /*
         GET AND SET FOR WHEN USER CLICKED OK
     */
     getFinishedSetUp() {
@@ -49,6 +37,17 @@ class AppStore extends EventEmitter {
         _finishedSetUp = input;
     }
 
+    /*
+        API call
+    */
+    getData() {
+       return _data;
+    }
+
+    fetchAPI(data) {
+      _data = data;
+      this.emitChange(); 
+    }
 
     addChangeListener(eventName, callback) {
         this.on(eventName, callback);
@@ -65,6 +64,9 @@ class AppStore extends EventEmitter {
                 break;
             case 'CLICK_OK':
                 this.clickOk(action.value);
+                break;
+            case 'WEATHER_LOADED':
+                this.fetchAPI(action.value);
                 break;
         }
 

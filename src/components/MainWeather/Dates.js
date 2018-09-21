@@ -8,7 +8,6 @@ class Dates extends Component {
 		let { activeDate } = this.props;
 		let weekDaysIndex = date_helpers.getCurrentWeekDays(date_helpers.DaysEnum, date_helpers.getCurrentDate());
 		// activeDate = date_helpers.getCurrentDate();
-		activeDate =4;
 		// console.log(activeDate);
 		let buttons = weekDaysIndex.map(day => {
 											if(day == activeDate) {
