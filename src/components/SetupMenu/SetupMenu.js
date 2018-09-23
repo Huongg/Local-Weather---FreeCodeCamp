@@ -18,7 +18,7 @@ class SetupMenu extends Component {
 				   Unit setup only takes you a few seconds
 				</p>
 				<ButtonsUnit />
-				<TestComponent></TestComponent>
+			
 			</div>
 			
 

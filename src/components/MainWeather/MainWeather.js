@@ -5,6 +5,7 @@ import SimilarTemps from './SimilarTemps.js';
 
 import AppStore from '../../store/AppStore.js';
 
+
 // class MainWeather{
 // 	generateURL(urlPrefix, chosenUnit, apiKey){
 // 		return `${urlPrefix}lat=35&lon=139&units=${chosenUnitt}&APPID=${apiKey}`;

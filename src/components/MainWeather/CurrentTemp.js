@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Jumbotron, Grid, Row, Col } from 'react-bootstrap';
 import { ButtonToolbar, ButtonGroup, Button } from 'react-bootstrap';
-import API from '../../actions/WeatherAPI';
+import AppActions from '../../actions/AppActions';
 const date_time_format = require('../../utils/date_time_format.js');
 
 // import {WeatherAPI} from '../../actions/WeatherAPI';
@@ -17,16 +17,16 @@ class CurrentTemp extends Component {
 	}
 
 	componentDidMount() {
-		API.fetchAPI();
+		AppActions.fetchAPI();
 	}
 
 	render() {
 		// const { apiResponse } = this.props;
-		const {chosenUnit} = this.props;
+		const { chosenUnit } = this.props;
 		// const {cityName}=this.props;
 		// const {tempInfo}= this.props;
 		const { data } = this.props;
-		const{activeDate}=this.props;
+		const{ activeDate }=this.props;
 
 
 
@@ -53,9 +53,10 @@ class CurrentTemp extends Component {
 		// console.log(`final data is:`);
 		// console.log(tempData);
  		
-		let name = "N/A";
+		let name, temp = "loading...";
 		if(data.hasOwnProperty("city")) {
 			name = data.city.name;
+			// temp = data.
 		}
 
 		// console.log(this.props);
@@ -63,6 +64,12 @@ class CurrentTemp extends Component {
 			<div className="temp-container">
 		      <Jumbotron>
 		      	<h1 className="country">{name}</h1>
+		      	<h1 className="temp">18
+		        	{chosenUnit=="metric" 
+		        		? <span>&deg;C</span> 
+		        		: <span>&deg;F</span> 
+		        	}
+		        </h1>
 		      </Jumbotron>
 		    </div>
 		)

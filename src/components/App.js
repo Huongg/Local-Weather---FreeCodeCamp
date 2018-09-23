@@ -13,21 +13,24 @@ class App extends Component {
 	}
 	
 	componentDidMount() {
-	    AppStore.addChangeListener('STORE_CLICK_OK', this.onChange);
+	    AppStore.addChangeListener('STORE_CLICK_OK', this.onChangeClickOk);
+	    AppStore.addChangeListener('STORE_CHOOSE_TEMP_UNIT', this.onChangeChosenUnit);
 	}
 
 	// Callbacks
-	onChange = () => {
-		this.updateFinishedSetUp();
-  	}
-
-
-  	// Logic
-	updateFinishedSetUp() {
+	onChangeClickOk = () => {
 		this.setState ({
 			finishedSetUp: AppStore.getFinishedSetUp()
 		})
-	}
+  	}
+
+  	onChangeChosenUnit = () => {
+		this.setState ({
+			chosenUnit: AppStore.getChosenUnit()
+		})
+  	}
+
+
 	render() {
 	    return (
 	    	<div>

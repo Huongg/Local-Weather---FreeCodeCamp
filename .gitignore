@@ -9,5 +9,5 @@ Client/build
 Client/node_modules
 Server/node_modules
 Server/.env
-node_modules
+/node_modules/
 .env
