@@ -18,6 +18,10 @@ class AppActions {
         });
     }
 
+    generateURL(URLPrefix, coordinats, chosenUnit, APIKey){
+        return `${URLPrefix}${coordinats}&units=${chosenUnit}&APPID=${APIKey}`;
+    }
+
     fetchAPI() {
         const URLPrefix = "http://api.openweathermap.org/data/2.5/forecast?";
         const APIKey = "26b3fd73e61dc700f749547b3833c188";
@@ -25,12 +29,13 @@ class AppActions {
         let chosenUnit = AppStore.getChosenUnit();
         let res;
 
-        let url = `${URLPrefix}${coordinats}&units=${chosenUnit}&APPID=${APIKey}`;
+        let url = this.generateURL(URLPrefix, coordinats, chosenUnit, APIKey)
         fetch (url)
             .then(results => {
                 return results.json();
             }).then(data => {
                 res = data;
+                // res = helpers.parseWeatherData(data);
                 
                 AppDispatcher.dispatch({
                     actionType: 'WEATHER_LOADED', 
