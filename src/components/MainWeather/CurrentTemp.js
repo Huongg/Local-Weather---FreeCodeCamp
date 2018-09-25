@@ -12,57 +12,73 @@ const date_time_format = require('../../utils/date_time_format.js');
 class CurrentTemp extends Component {
 	constructor(props) {
 		super(props);
-		this.defaultHeight = 40;
-		this.defaultWidth = 40;
+		this.state = {
+			activeDate : this.props.activeDate
+		}
 	}
 
 	componentDidMount() {
 		AppActions.fetchAPI();
 	}
 
+	componentWillReceiveProps(nextProps) {
+	  	this.setState({ 
+	  		activeDate: nextProps.activeDate
+	  	});  
+	}
+
 	render() {
 		const { chosenUnit } = this.props;
 		const { data } = this.props;
-		const{ activeDate } = this.props;
-		// let name, dailyForecast, temp, iconCode, iconSrc, description= "N/A";
-		// let date;
+		// const{ activeDate } = this.props;
 
-		// // if(activeDate) {
-			// if(tempInfo && tempInfo.length > 0) {
-			// 	date= parseInt(activeDate);
-
-			// 	tempData = tempInfo[date];
-			// 	temp = Math.round(tempData.main.temp);
-			// 	iconCode = tempData.weather.icon;
-			// 	iconSrc = `http://openweathermap.org/img/w/${iconCode}.png` 
-			// 	description = tempData.weather.description;
-			// }
-		
-		// }
-
-		// console.log("date is:");
-		// console.log(date);
-
-		// console.log(`final data is:`);
-		// console.log(tempData);
  		
-		let name, temp = "loading...";
+		let name, min_temp, max_temp = "loading...";
+		let min_iconCode, min_iconSrc, min_desc, max_iconCode, max_iconSrc, max_desc = "N/A";
+		let temp_info = "N/A";
+
 		if(data.hasOwnProperty("city")) {
 			name = data.city.name;
-			// temp = data.
+			min_temp = Math.round(data.list[this.state.activeDate].min);
+			max_temp = Math.round(data.list[this.state.activeDate].max);
+
+			min_iconCode = data.list[this.state.activeDate].icon[0];
+			min_iconSrc = `http://openweathermap.org/img/w/${min_iconCode}.png` ;
+			min_desc = data.list[this.state.activeDate].desc[0];
+
+			max_iconCode = data.list[this.state.activeDate].icon[1];
+			max_iconSrc = `http://openweathermap.org/img/w/${max_iconCode}.png` ;
+			max_desc = data.list[this.state.activeDate].desc[1];
 		}
 
-		// console.log(this.props);
+		console.log(this.props);
+
 		return(
 			<div className="temp-container">
 		      <Jumbotron>
 		      	<h1 className="country">{name}</h1>
-		      	<h1 className="temp">18
-		        	{chosenUnit=="metric" 
-		        		? <span>&deg;C</span> 
-		        		: <span>&deg;F</span> 
-		        	}
-		        </h1>
+		      	<Grid>
+		        	<Row>
+					   <Col md={6}>
+							<img src={min_iconSrc}/>
+				      		<p className="description">{min_desc}</p>
+						</Col>
+				      	<Col md={6}>
+					      	<h1 className="temp">{max_temp}
+					        	{chosenUnit=="metric" 
+					        		? <span>&deg;C</span> 
+					        		: <span>&deg;F</span> 
+					        	}
+					        </h1>
+					      	<p className="temp">{min_temp}
+					        	{chosenUnit=="metric" 
+					        		? <span>&deg;C</span> 
+					        		: <span>&deg;F</span> 
+					        	}
+					        </p>
+					    </Col> 
+					</Row>
+				</Grid>
 		      </Jumbotron>
 		    </div>
 		)
@@ -71,3 +87,20 @@ class CurrentTemp extends Component {
 }
 
 export default CurrentTemp;
+
+
+
+// class TempInfo extends Component {
+// 	render() {
+// 		return(
+// 			<Col md={6}>
+// 				<img src={min_iconSrc}/>
+// 	      		<p className="description">{min_desc}</p>
+// 			</Col>
+// 		)
+// 	}
+// }
+
+
+
+

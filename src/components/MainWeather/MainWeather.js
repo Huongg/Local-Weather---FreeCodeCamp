@@ -52,13 +52,14 @@ class MainWeather extends Component {
 	}
 
 	render() {
-		console.log(this.state);
+		// console.log(this.state);
 		return(
 			<div>
 				<Dates handleClick={this.handleClick}
 						activeDate={this.state.activeDate}/>
 				<CurrentTemp chosenUnit={this.state.chosenUnit}
-							 data={this.state.data}>
+							 data={this.state.data}
+							 activeDate={this.state.activeDate}>
 				</CurrentTemp>
 				<SimilarTemps />
 			</div>
