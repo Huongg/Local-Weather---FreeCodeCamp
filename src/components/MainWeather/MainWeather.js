@@ -20,7 +20,7 @@ class MainWeather extends Component {
 		this.state = {
 			chosenUnit: AppStore.getChosenUnit(),
 			data: {},
-			activeDate: "0"
+			activeDate: 0
 		}
 	}
 	

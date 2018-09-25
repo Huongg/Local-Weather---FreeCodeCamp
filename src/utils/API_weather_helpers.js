@@ -1,6 +1,17 @@
 function parseWeatherData(weather_data) {
 	let datesToData = {};
+	let results = {};
 
+	let keyItems = {
+		id: weather_data.city.id,
+		name: weather_data.city.name,
+		coord: {
+			lat: weather_data.city.coord.lat,
+			lon: weather_data.city.coord.lon
+		}
+	}
+
+	results["city"] = keyItems;
 
 	weather_data.list.forEach(item => {
 		let date = item.dt_txt.slice(0, 10);
@@ -35,9 +46,9 @@ function parseWeatherData(weather_data) {
 
 	let keys = Object.keys(datesToData);
 
-	let results = {};
+	let list = [];
 	// datesToData = datesToData.map(item => item);
-	keys.forEach(key => {
+	keys.forEach((key,index)=> {
 		let datePoints = datesToData[key]; //list of time periods within a given date
 
 		let min = Number.MAX_SAFE_INTEGER;
@@ -68,15 +79,16 @@ function parseWeatherData(weather_data) {
 			min : min,
 			max : max,
 			desc : (min_desc !== max_desc)? [min_desc, max_desc] : [min_desc],
-			icon : (min_desc !== max_desc)? [min_icon, max_icon] : [min_icon]
+			icon : (min_desc !== max_desc)? [min_icon, max_icon] : [min_icon],
+			date: keys[index]
 		}
 
-		results[key] = keyItems;
+		// list[key] = index;
+		list[index] = keyItems;
 
 	})
 
-
-
+	results["list"] = list;
 	return results;
 }
 

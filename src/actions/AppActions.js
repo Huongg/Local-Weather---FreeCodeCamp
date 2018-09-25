@@ -1,5 +1,6 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppStore from '../store/AppStore';
+import API_weather_helpers from '../utils/API_weather_helpers';
 
 
 class AppActions {
@@ -34,17 +35,13 @@ class AppActions {
             .then(results => {
                 return results.json();
             }).then(data => {
-                res = data;
-                // res = helpers.parseWeatherData(data);
+                // res = data;
+                res = API_weather_helpers.parseWeatherData(data);
                 
                 AppDispatcher.dispatch({
                     actionType: 'WEATHER_LOADED', 
                     value: res
                 })
-                 // let name = data.city.name;
-                // let dt_txt = data.list[0].dt_txt;
-                // let currentDate = new Date(dt_txt).getDate();
-    
             });
 
     }

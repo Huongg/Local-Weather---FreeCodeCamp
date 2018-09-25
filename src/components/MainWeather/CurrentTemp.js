@@ -21,16 +21,9 @@ class CurrentTemp extends Component {
 	}
 
 	render() {
-		// const { apiResponse } = this.props;
 		const { chosenUnit } = this.props;
-		// const {cityName}=this.props;
-		// const {tempInfo}= this.props;
 		const { data } = this.props;
-		const{ activeDate }=this.props;
-
-
-
-		// // let tempData = {};
+		const{ activeDate } = this.props;
 		// let name, dailyForecast, temp, iconCode, iconSrc, description= "N/A";
 		// let date;
 
