@@ -38,9 +38,6 @@ function parseWeatherData(weather_data) {
 		}
 
 		datesToData[date].push(keyItems);
-
-
-		// return new Date(item.dt_txt).getDate();
 	});
 
 

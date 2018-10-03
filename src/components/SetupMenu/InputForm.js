@@ -28,7 +28,7 @@ class InputForm extends Component {
 			this.setState({
 				hasSubmitted:true
 			})
-			AppActions.chosenCity(this.state.chosenCity)
+			AppActions.chosenCity(this.state.chosenCity);
 			
 		}
 		
