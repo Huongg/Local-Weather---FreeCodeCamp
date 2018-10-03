@@ -37,14 +37,18 @@ Local-Weather/
   config/
   lib/
   node_modules/
+  _tests_/
+        actions/
+        mocks/
+        utils/
   public/
+        assets/
         index.html
   scripts/
-  spec/
-        src/
-        utils/
   src/
-        assets/
+        actions/
+                AppAction.js
+                get_current_location.js
         componets/
                 MainWeather/
                         CurrentTemp.js
@@ -53,11 +57,12 @@ Local-Weather/
                         SimilarTemps.js
                 SetupMenu/
                         ButtonUnit.js
+                        InputForm.js
                         SetupMenu.js
                         TestComponent.js
-        libs/
-                AppAction.js
+        dispatcher/
                 AppDispatcher.js
+        store/
                 AppStore.js
         stylesheets/
                 abstracts/
@@ -75,8 +80,9 @@ Local-Weather/
                         bootstrap.scss
                 main.scss
         utils/
+                API_weather_helpers.js
                 date_helpers.js
-                get_current_location.js
+                date_time_format.js
                 registerServiceWorkder.js
         index.js
   
