@@ -1,13 +1,13 @@
-@import 'abstracts/variables',
-  		'abstracts/colours';
+@import './abstracts/variables',
+  		'./abstracts/colours';
 
-@import 'base/typography';
+@import './base/typography';
 
 @import './components/buttons';
 
-@import 'pages/mainPage';
+@import './pages/mainPage';
 
-@import 'vendors/bootstrap';
+@import './vendors/bootstrap';
 
 
 

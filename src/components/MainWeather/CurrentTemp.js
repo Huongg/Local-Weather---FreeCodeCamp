@@ -60,17 +60,17 @@ class CurrentTemp extends Component {
 		      	<Grid>
 		        	<Row>
 					   <Col md={6}>
-							<img src={min_iconSrc}/>
+							<img className="icon" src={min_iconSrc}/>
 				      		<p className="description">{min_desc}</p>
 						</Col>
 				      	<Col md={6}>
-					      	<h1 className="temp">{max_temp}
+					      	<h1 className="max-temp">{max_temp}
 					        	{chosenUnit=="metric" 
 					        		? <span>&deg;C</span> 
 					        		: <span>&deg;F</span> 
 					        	}
 					        </h1>
-					      	<p className="temp">{min_temp}
+					      	<p className="min-temp">{min_temp}
 					        	{chosenUnit=="metric" 
 					        		? <span>&deg;C</span> 
 					        		: <span>&deg;F</span> 

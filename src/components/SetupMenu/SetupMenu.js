@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 import ButtonsUnit from './ButtonsUnit.js';
-import TestComponent from './TestComponent.js';
+import InputForm from './InputForm.js';
+import AppActions from '../../actions/AppActions';
+import AppStore from '../../store/AppStore';
 
 class SetupMenu extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			coords: AppStore.getCurrentLocation()
+		}
+	}
+
+
 
 	render() {
+		console.log(this.state);
 		return(
 			<div className="setupMenu-container">
 				<h1>Hello, sunshine!</h1>
@@ -17,6 +28,7 @@ class SetupMenu extends Component {
 				<p>
 				   Unit setup only takes you a few seconds
 				</p>
+				<InputForm />
 				<ButtonsUnit />
 			
 			</div>

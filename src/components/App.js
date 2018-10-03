@@ -1,20 +1,32 @@
 import React, { Component } from 'react';
-import SetupMenu from './SetupMenu/SetupMenu.js';
-import MainWeather from './MainWeather/MainWeather.js';
-import AppStore from '../store/AppStore.js';
+import SetupMenu from './SetupMenu/SetupMenu';
+import MainWeather from './MainWeather/MainWeather';
+import AppStore from '../store/AppStore';
+import AppActions from '../actions/AppActions';
+
 
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			finishedSetUp:undefined
+			finishedSetUp: undefined,
+			chosenUnit: undefined,
+			chosenCity: undefined,
+			coords: undefined
 		}
+	}
+
+
+	componentWillMount() {
+		AppActions.getCurrentLocation();
 	}
 	
 	componentDidMount() {
 	    AppStore.addChangeListener('STORE_CLICK_OK', this.onChangeClickOk);
 	    AppStore.addChangeListener('STORE_CHOOSE_TEMP_UNIT', this.onChangeChosenUnit);
+	    AppStore.addChangeListener('STORE_CHOSEN_CITY', this.onChangeChosenCity);
+	    AppStore.addChangeListener('STORE_CURRENT_LOCATION_LOADED', this.onChangeGetCurrentLocation);
 	}
 
 	// Callbacks
@@ -30,8 +42,21 @@ class App extends Component {
 		})
   	}
 
+  	onChangeChosenCity = () => {
+  		this.setState ({
+  			chosenCity: AppStore.getChosenCity()
+  		})
+  	}
+
+  	onChangeGetCurrentLocation = () => {
+  		this.setState({
+  			coords: AppStore.getCoords()
+  		})
+  	}
+
 
 	render() {
+		console.log(this.state);
 	    return (
 	    	<div>
 	    		{this.state.finishedSetUp

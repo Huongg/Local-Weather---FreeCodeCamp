@@ -3,7 +3,9 @@ import { EventEmitter } from 'events';
 
 let _chosenUnit = undefined;
 let _finishedSetUp = undefined;
+let _chosenCity = undefined;
 let _data = undefined;
+let _coords = undefined;
 
 class AppStore extends EventEmitter {
     constructor() {
@@ -38,6 +40,17 @@ class AppStore extends EventEmitter {
     }
 
     /*
+        GET AND SET FOR WHEN USER ENTER THE CITY NAME
+    */
+    getChosenCity() {
+        return _chosenCity;
+    }
+
+    chooseACity(input) {
+        _chosenCity = input;
+    }
+
+    /*
         API call
     */
     getData() {
@@ -46,7 +59,15 @@ class AppStore extends EventEmitter {
 
     fetchAPI(data) {
       _data = data;
-      this.emitChange(); 
+      this.emitChange(); //Will trigger the listener in the component
+    }
+
+    getCoords() {
+        return _coords;
+    }
+
+    getCurrentLocation(val) {
+        _coords = val;
     }
 
     addChangeListener(eventName, callback) {
@@ -65,8 +86,14 @@ class AppStore extends EventEmitter {
             case 'CLICK_OK':
                 this.clickOk(action.value);
                 break;
+            case 'CHOSEN_CITY':
+                this.chooseACity(action.value);
+                break;
             case 'WEATHER_LOADED':
                 this.fetchAPI(action.value);
+                break;
+            case 'CURRENT_LOCATION_LOADED':
+                this.getCurrentLocation(action.payload);
                 break;
         }
 

@@ -14,17 +14,19 @@ import AppStore from '../../store/AppStore.js';
 
 
 
+
 class MainWeather extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			chosenUnit: AppStore.getChosenUnit(),
 			data: {},
-			activeDate: 0
+			activeDate: 0,
+			
 		}
 	}
 	
-
+	
 	componentDidMount() {
 	    AppStore.addChangeListener('STORE_WEATHER_LOADED', this.onStoreChange);
 	}
@@ -52,7 +54,7 @@ class MainWeather extends Component {
 	}
 
 	render() {
-		// console.log(this.state);
+		console.log(this.state);
 		return(
 			<div>
 				<Dates handleClick={this.handleClick}

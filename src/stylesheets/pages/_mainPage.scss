@@ -1,11 +1,32 @@
 .temp-container {
 	width: 700px;
 	margin-left: 25%;
+	color: $patina;
 	
 	.jumbotron {
 		background: $cream;
 		box-shadow: 10px 10px 5px $light-grey;
 	}
+}
+
+.country {
+	font-size: $h1-size;
+}
+
+.max-temp {
+	font-size: $p-size;
+}
+
+.min-tem {
+	font-size: $p-size/2;
+}
+
+.description {
+	font-size: $p-size/2;
+}
+
+.icon {
+	width: $button-height;
 }
 
 .similartemps-container {
