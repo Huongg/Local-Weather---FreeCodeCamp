@@ -59,9 +59,9 @@ const EXPECTED_JSON  = {
 	}
 
 test("Should return correctly formatted URL for metric API URL", () => {
-	let expectedRes = "http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&units=metric&APPID=26b3fd73e61dc700f749547b3833c188";
+	let expectedRes = "http://api.openweathermap.org/data/2.5/forecast?q=london&units=metric&APPID=26b3fd73e61dc700f749547b3833c188";
     let actualRes = AppActions.generateURL("http://api.openweathermap.org/data/2.5/forecast?", 
-        "lat=35&lon=139", "metric", "26b3fd73e61dc700f749547b3833c188");
+        "london", "metric", "26b3fd73e61dc700f749547b3833c188");
 	expect(actualRes).toBe(expectedRes);
 })
 

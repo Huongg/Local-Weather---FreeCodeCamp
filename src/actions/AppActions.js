@@ -27,7 +27,7 @@ class AppActions {
     }
 
     generateURL(URLPrefix, countryName, chosenUnit, APIKey){
-        return `${URLPrefix}&q=${countryName}&units=${chosenUnit}&APPID=${APIKey}`;
+        return `${URLPrefix}q=${countryName}&units=${chosenUnit}&APPID=${APIKey}`;
     }
 
     fetchAPI() {
