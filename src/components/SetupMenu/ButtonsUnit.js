@@ -8,22 +8,8 @@ class ButtonsUnit extends Component {
 		super(props);
 	}
 
-	handleClick = (e) => {
-	
-		let chosenUnit = e.target.id;
-
-		switch (chosenUnit) {
-		    case "degreeC":
-		    	AppActions.chooseTempUnit("metric");
-		        break;
-		    case "degreeF":
-		    	AppActions.chooseTempUnit("imperial");
-		        break;
-		    case "ok":
-		    	AppActions.clickOk(chosenUnit);
-		        break;
-		}
-		
+	handleClick = (event) => {
+		this.props.handleButtonUnitClick(event);
 	}
 
 

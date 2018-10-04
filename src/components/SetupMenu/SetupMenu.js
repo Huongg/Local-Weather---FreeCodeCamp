@@ -30,7 +30,7 @@ class SetupMenu extends Component {
 			hasSubmitted:true
 		})    
 
-		AppActions.chosenCity(this.state.chosenCity);
+		
 	}
 
 	handleClick = (event) => {
@@ -38,6 +38,25 @@ class SetupMenu extends Component {
 			clicked: true
 		})
 		AppActions.getCurrentLocation();
+	}
+
+	handleButtonUnitClick = (e) => {
+	
+		let chosenUnit = e.target.id;
+
+		switch (chosenUnit) {
+		    case "degreeC":
+		    	AppActions.chooseTempUnit("metric");
+		        break;
+		    case "degreeF":
+		    	AppActions.chooseTempUnit("imperial");
+		        break;
+		    case "ok":
+		    	AppActions.clickOk(chosenUnit);
+		    	AppActions.chosenCity(this.state.chosenCity);
+		        break;
+		}
+		
 	}
 
 	render() {
@@ -59,7 +78,9 @@ class SetupMenu extends Component {
 					handleKeyPress = {this.handleKeyPress}
 					handleClick = {this.handleClick}
 				/>
-				<ButtonsUnit />
+				<ButtonsUnit 
+					handleButtonUnitClick = {this.handleButtonUnitClick}
+				/>
 			
 			</div>
 			
