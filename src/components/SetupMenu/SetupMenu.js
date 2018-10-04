@@ -9,7 +9,6 @@ class SetupMenu extends Component {
 		super(props);
 		this.state = {
 			clicked: false,
-			hasSubmitted: false,
 			chosenCity: ""
 		}
 	}
@@ -21,15 +20,6 @@ class SetupMenu extends Component {
 		this.setState ({
 			chosenCity: value
 		})
-		
-	}
-
-	handleKeyPress = (event) => {
-		// event.preventDefault();
-		this.setState({
-			hasSubmitted:true
-		})    
-
 		
 	}
 
