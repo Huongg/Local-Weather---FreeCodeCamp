@@ -8,11 +8,37 @@ class SetupMenu extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			coords: AppStore.getCurrentLocation()
+			clicked: false,
+			hasSubmitted: false,
+			chosenCity: ""
 		}
 	}
 
 
+	handleChange = (e) => {
+		let value = e.target.value;
+		console.log(value);
+		this.setState ({
+			chosenCity: value
+		})
+		
+	}
+
+	handleKeyPress = (event) => {
+		// event.preventDefault();
+		this.setState({
+			hasSubmitted:true
+		})    
+
+		AppActions.chosenCity(this.state.chosenCity);
+	}
+
+	handleClick = (event) => {
+		this.setState({
+			clicked: true
+		})
+		AppActions.getCurrentLocation();
+	}
 
 	render() {
 		console.log(this.state);
@@ -28,7 +54,11 @@ class SetupMenu extends Component {
 				<p>
 				   Unit setup only takes you a few seconds
 				</p>
-				<InputForm />
+				<InputForm 
+					handleChange = {this.handleChange}
+					handleKeyPress = {this.handleKeyPress}
+					handleClick = {this.handleClick}
+				/>
 				<ButtonsUnit />
 			
 			</div>

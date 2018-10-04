@@ -31,18 +31,17 @@
 }
 
 
-.form-control {
+.input-form {
     width: 20%;
     text-align: center;
-    margin-left: 40%;
+    height: $button-height/2;
 }
 
 
-.add-button {
-	width: 40px;
-    height: 24px;
-    margin-top: 10px;
-    text-align: center;
-}
 
+.enter-location {
+    width: 20%;
+    margin-left: $margin;
+    height: $button-height/2;
+}
 

@@ -16,11 +16,6 @@ class App extends Component {
 			coords: undefined
 		}
 	}
-
-
-	componentWillMount() {
-		AppActions.getCurrentLocation();
-	}
 	
 	componentDidMount() {
 	    AppStore.addChangeListener('STORE_CLICK_OK', this.onChangeClickOk);
@@ -50,7 +45,7 @@ class App extends Component {
 
   	onChangeGetCurrentLocation = () => {
   		this.setState({
-  			coords: AppStore.getCoords()
+  			coords: AppStore.getCurrentLocationCoords()
   		})
   	}
 

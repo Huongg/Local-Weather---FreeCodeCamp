@@ -4,8 +4,7 @@ const date_helpers = require('../../utils/date_helpers.js');
 
 class Dates extends Component {
 	render() {
-		let { handleClick } = this.props;
-		let { activeDate } = this.props;
+		let { handleClick, activeDate } = this.props;
 		let weekDaysIndex = date_helpers.getCurrentWeekDays(date_helpers.DaysEnum, date_helpers.getCurrentDate());
 		let buttons = weekDaysIndex.map((day, index) => {
 											if(index == activeDate) {

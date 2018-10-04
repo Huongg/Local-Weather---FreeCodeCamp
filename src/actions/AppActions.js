@@ -26,19 +26,25 @@ class AppActions {
         });
     }
 
-    generateURL(URLPrefix, countryName, chosenUnit, APIKey){
-        return `${URLPrefix}q=${countryName}&units=${chosenUnit}&APPID=${APIKey}`;
+
+    generateURL(URLPrefix, countryName, chosenUnit, APIKey, coordinats){
+        if (countryName == undefined) {
+            return `${URLPrefix}lat=${coordinats.latitude}&lon=${coordinats.longitude}&units=${chosenUnit}&APPID=${APIKey}`;
+        } else {
+            return `${URLPrefix}q=${countryName}&units=${chosenUnit}&APPID=${APIKey}`;
+        }
+        
     }
 
     fetchAPI() {
         const URLPrefix = "http://api.openweathermap.org/data/2.5/forecast?";
         const APIKey = "26b3fd73e61dc700f749547b3833c188";
-        let coordinats = "lat=35&lon=139";
+        let coordinats = AppStore.getCurrentLocationCoords();
         let countryName = AppStore.getChosenCity();
         let chosenUnit = AppStore.getChosenUnit();
         let res;
 
-        let url = this.generateURL(URLPrefix, countryName, chosenUnit, APIKey)
+        let url = this.generateURL(URLPrefix, countryName, chosenUnit, APIKey, coordinats)
         fetch (url)
             .then(results => {
                 return results.json();
@@ -55,24 +61,21 @@ class AppActions {
     }
 
     getCurrentLocation() {
-        const geolocation = navigator.geolocation;
-          
-        const location = new Promise((resolve, reject) => {
-            if (!geolocation) {
-              reject(new Error('Not Supported'));
-            }
-            
-            geolocation.getCurrentPosition((position) => {
-              resolve(position);
-            }, () => {
-              reject (new Error('Permission denied'));
-            });
-        });
-          
-        AppDispatcher.dispatch({
-            actionType: 'CURRENT_LOCATION_LOADED',
-            payload: location
-        })
+        let geolocation = navigator.geolocation;
+
+        if (geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                let coords = position.coords;
+
+                AppDispatcher.dispatch({
+                    actionType: 'CURRENT_LOCATION_LOADED',
+                    value: coords
+                })
+            })
+        } else {
+            console.log("Not supported");
+        }
+        
            
         
     };

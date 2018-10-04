@@ -6,6 +6,7 @@ let _finishedSetUp = undefined;
 let _chosenCity = undefined;
 let _data = undefined;
 let _coords = undefined;
+let _usedCurrentLocation = undefined;
 
 class AppStore extends EventEmitter {
     constructor() {
@@ -62,7 +63,7 @@ class AppStore extends EventEmitter {
       this.emitChange(); //Will trigger the listener in the component
     }
 
-    getCoords() {
+    getCurrentLocationCoords() {
         return _coords;
     }
 
@@ -93,7 +94,7 @@ class AppStore extends EventEmitter {
                 this.fetchAPI(action.value);
                 break;
             case 'CURRENT_LOCATION_LOADED':
-                this.getCurrentLocation(action.payload);
+                this.getCurrentLocation(action.value);
                 break;
         }
 

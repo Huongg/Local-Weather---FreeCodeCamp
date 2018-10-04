@@ -31,8 +31,7 @@ class CurrentTemp extends Component {
 	}
 
 	render() {
-		const { chosenUnit } = this.props;
-		const { data } = this.props;
+		const { chosenUnit, data } = this.props;
  		
 		let name, min_temp, max_temp = "loading...";
 		let min_iconCode, min_iconSrc, min_desc, max_iconCode, max_iconSrc, max_desc = "N/A";
@@ -89,6 +88,7 @@ class CurrentTemp extends Component {
 		} else {
 			if(data.hasOwnProperty("city")) {
 				name = data.city.name;
+				
 			}
 			return (
 				<div className="temp-container">
