@@ -28,10 +28,10 @@ class AppActions {
 
 
     generateURL(URLPrefix, countryName, chosenUnit, APIKey, coordinats){
-        if (countryName == undefined) {
-            return `${URLPrefix}lat=${coordinats.latitude}&lon=${coordinats.longitude}&units=${chosenUnit}&APPID=${APIKey}`;
-        } else {
+        if (countryName) {
             return `${URLPrefix}q=${countryName}&units=${chosenUnit}&APPID=${APIKey}`;
+        } else {
+            return `${URLPrefix}lat=${coordinats.latitude}&lon=${coordinats.longitude}&units=${chosenUnit}&APPID=${APIKey}`;
         }
         
     }
