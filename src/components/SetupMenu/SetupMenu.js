@@ -17,10 +17,10 @@ class SetupMenu extends Component {
 	handleChange = (e) => {
 		let value = e.target.value;
 		console.log(value);
-		this.setState ({
+		this.setState({
 			chosenCity: value
 		})
-		
+
 	}
 
 	handleClick = (event) => {
@@ -31,49 +31,45 @@ class SetupMenu extends Component {
 	}
 
 	handleButtonUnitClick = (e) => {
-	
 		let chosenUnit = e.target.id;
 
 		switch (chosenUnit) {
-		    case "degreeC":
-		    	AppActions.chooseTempUnit("metric");
-		        break;
-		    case "degreeF":
-		    	AppActions.chooseTempUnit("imperial");
-		        break;
-		    case "ok":
-		    	AppActions.clickOk(chosenUnit);
-		    	AppActions.chosenCity(this.state.chosenCity);
-		        break;
+			case "degreeC":
+				AppActions.chooseTempUnit("metric");
+				break;
+			case "degreeF":
+				AppActions.chooseTempUnit("imperial");
+				break;
+			case "ok":
+				AppActions.clickOk(chosenUnit);
+				AppActions.chosenCity(this.state.chosenCity);
+				break;
 		}
-		
 	}
 
 	render() {
 		console.log(this.state);
-		return(
+		return (
 			<div className="setupMenu-container">
-				<h1>Hello, sunshine!</h1>
-			  	<p>
-				    This is a simple weather application that shows you the current local weather and
-				    where it likely to be similar temperature. 
-				    <br/>
-				    You're able to search for more different locations if you'd love to. 
-				</p>
+				<div class="h1-wrapper">
+					<h1 data-heading="Hello sunshine!">Hello sunshine!</h1>
+				</div>
 				<p>
-				   Unit setup only takes you a few seconds
+					This is a simple weather application that shows you the current local weather and
+					where it likely to be similar temperature.
+				    <br />
+					You're able to search for more different locations if you'd love to.
 				</p>
-				<InputForm 
-					handleChange = {this.handleChange}
-					handleKeyPress = {this.handleKeyPress}
-					handleClick = {this.handleClick}
+				<InputForm
+					handleChange={this.handleChange}
+					handleKeyPress={this.handleKeyPress}
+					handleClick={this.handleClick}
 				/>
-				<ButtonsUnit 
-					handleButtonUnitClick = {this.handleButtonUnitClick}
+				<ButtonsUnit
+					handleButtonUnitClick={this.handleButtonUnitClick}
 				/>
-			
 			</div>
-			
+
 
 		)
 	}

@@ -4,44 +4,36 @@
 	margin-top: $margin;
 }
 
-.temp-unit {
-	margin:20px;
-	background-color: $patina;
+.btn-temp-unit {
+	margin: $margin;
 	font-weight: $font-weight-regular;
 	width: $button-width;
 	height: $button-height;
+	background: darken($blue, 5%);  
+	border: 1px solid darken($blue, 6%);
+	box-shadow: 0px 2px 0 darken($dark-blue, 5%), 2px 4px 6px darken($dark-blue, 2%);
+	transition: all 150ms linear;
 }
 
 
-.btn-sm {
-	width: ($button-width)*2 + $margin;
-	background-color: $patina;
+.btn-ok {
+	font-weight: $font-weight-regular;
+	width: $button-width*2;
 	height: $button-height;
-    font-weight: $font-weight-bold;
-    margin-bottom: $margin;
+	background: darken($blue, 5%);  
+	border: 1px solid darken($blue, 10%);
+	box-shadow: 0px 2px 0 darken($dark-blue, 5%), 2px 4px 6px darken($dark-blue, 2%);
+	transition: all 150ms linear;
 }
 
-.btn-default {
-	width: $button-width/2;
-	height: $button-height;	
-}
-
-.active {
-	background-color: $patina;
-}
-
-
-.input-form {
-    width: 20%;
+.btn-location {
+	margin: $margin;
+    width: 14%;
     text-align: center;
-    height: $button-height/2;
+	height: $button-height/2;
+	background: darken($blue, 5%);  
+	border: 1px solid darken($blue, 10%);
+	box-shadow: 0px 2px 0 darken($dark-blue, 5%), 2px 4px 6px darken($dark-blue, 2%);
 }
 
-
-
-.enter-location {
-    width: 20%;
-    margin-left: $margin;
-    height: $button-height/2;
-}
 

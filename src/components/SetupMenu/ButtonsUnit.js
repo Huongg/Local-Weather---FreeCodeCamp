@@ -14,14 +14,14 @@ class ButtonsUnit extends Component {
 
 
 	render() {
-		return(
+		return (
 			<div>
-			  <ButtonToolbar>
-			    <Button id="degreeC" bsSize="large" className="temp-unit" style={{"fontSize": "20px"}} onClick={this.handleClick}>&deg;C</Button>
-			    <Button id="degreeF" bsSize="large" className="temp-unit" style={{"fontSize": "20px"}} onClick={this.handleClick}>&deg;F</Button>
-			  </ButtonToolbar>
-			  
-			  <Button id="ok" bsStyle="primary" bsSize="small" style={{"fontSize": "20px"}} onClick={this.handleClick}>OK</Button>
+				<ButtonToolbar>
+					<Button id="degreeC" className="btn-temp-unit" style={{ "fontSize": "20px" }} onClick={this.handleClick}>&deg;C</Button>
+					<Button id="degreeF" className="btn-temp-unit" style={{ "fontSize": "20px" }} onClick={this.handleClick}>&deg;F</Button>
+				</ButtonToolbar>
+
+				<Button id="ok" className="btn-ok" style={{ "fontSize": "20px" }} onClick={this.handleClick}>OK</Button>
 			</div>
 		)
 	}

@@ -1,25 +1,14 @@
 @import './abstracts/variables',
   		'./abstracts/colours';
-
 @import './base/typography';
-
 @import './components/buttons';
-
 @import './pages/mainPage';
-
+@import './pages/setUpPage';
 @import './vendors/bootstrap';
 
-
-
 body {
-	background-color: $iron;
+	background: $background;
 	text-align: center;
 	font-family: $font, monospace;
 	color: $dark-grey;
-	padding: $margin;
-	line-height: 1.4;
-}
-
-#root {
-	height: 600px;
 }
