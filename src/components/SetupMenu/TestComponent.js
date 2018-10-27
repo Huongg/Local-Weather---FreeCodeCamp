@@ -5,35 +5,35 @@ class Test extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			chosenUnit:undefined,
+			chosenUnit: undefined,
 			chosenSpeed: undefined
 		}
 	}
-	
+
 	componentDidMount() {
-	    AppStore.addChangeListener('STORE_CHOOSE_TEMP_UNIT', this.onChange);
+		AppStore.addChangeListener('STORE_CHOOSE_TEMP_UNIT', this.onChange);
 	}
 
 	// Callbacks
 	onChange = () => {
 		this.updateChosenUnit();
-  	}
+	}
 
-  	// Logic
+	// Logic
 	updateChosenUnit() {
-		this.setState ({
+		this.setState({
 			chosenUnit: AppStore.getChosenUnit()
 		})
 	}
 
 	render() {
 
-		return(
+		return (
 			<div>
-			<p>{this.state.chosenUnit}</p>
-			<p>{this.state.chosenSpeed}</p>
+				<p>{this.state.chosenUnit}</p>
+				<p>{this.state.chosenSpeed}</p>
 			</div>
-		)	
+		)
 	}
 }
 

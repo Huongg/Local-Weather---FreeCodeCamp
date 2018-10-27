@@ -22,28 +22,28 @@ class MainWeather extends Component {
 			chosenUnit: AppStore.getChosenUnit(),
 			data: {},
 			activeDate: 0,
-			
+
 		}
 	}
-	
-	
+
+
 	componentDidMount() {
-	    AppStore.addChangeListener('STORE_WEATHER_LOADED', this.onStoreChange);
+		AppStore.addChangeListener('STORE_WEATHER_LOADED', this.onStoreChange);
 	}
 
 	// Callbacks
 	onStoreChange = () => {
 		this.fetchingAPI();
-  	}
+	}
 
 
-  	// Logic
+	// Logic
 	fetchingAPI() {
-		this.setState ({
-			data: AppStore.getData() 
+		this.setState({
+			data: AppStore.getData()
 		})
 	}
-	
+
 
 	handleClick = (date) => {
 		console.log(date);
@@ -55,13 +55,13 @@ class MainWeather extends Component {
 
 	render() {
 		console.log(this.state);
-		return(
+		return (
 			<div>
 				<Dates handleClick={this.handleClick}
-						activeDate={this.state.activeDate}/>
+					activeDate={this.state.activeDate} />
 				<CurrentTemp chosenUnit={this.state.chosenUnit}
-							 data={this.state.data}
-							 activeDate={this.state.activeDate}>
+					data={this.state.data}
+					activeDate={this.state.activeDate}>
 				</CurrentTemp>
 				<SimilarTemps />
 			</div>

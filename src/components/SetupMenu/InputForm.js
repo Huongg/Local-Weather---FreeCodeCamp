@@ -10,7 +10,7 @@ class InputForm extends Component {
 	}
 
 	handleKeyPress = (event) => {
-		if (event.charCode == 13){
+		if (event.charCode == 13) {
 			console.log('Pressed enter');
 			this.props.handleKeyPress(event);
 
@@ -22,15 +22,15 @@ class InputForm extends Component {
 	}
 
 	render() {
-		return(
-           <div className="input-categories">
-			    <input type="text" className="input-form"
-		           		placeholder="Enter the location"
-	            		onChange = {this.handleChange} 
-	            		onKeyPress = {this.props.handleKeyPress}/>	
-	           	<button className="enter-location"
-	           			onClick = {this.handleClick}>Use my location</button>		
-			</div>	
+		return (
+			<div className="input-categories">
+				<input type="text" className="btn-location"
+					placeholder="Search..."
+					onChange={this.handleChange}
+					onKeyPress={this.props.handleKeyPress} />
+				<button className="btn-location"
+					onClick={this.handleClick}>Use my location</button>
+			</div>
 		)
 	}
 }

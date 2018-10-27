@@ -22,7 +22,7 @@ class AppStore extends EventEmitter {
         GET AND SET FOR TEMP UNIT
     */
     getChosenUnit() {
-         return _chosenUnit;
+        return _chosenUnit;
     }
 
     chooseTempUnit(input) {
@@ -55,12 +55,12 @@ class AppStore extends EventEmitter {
         API call
     */
     getData() {
-       return _data;
+        return _data;
     }
 
     fetchAPI(data) {
-      _data = data;
-      this.emitChange(); //Will trigger the listener in the component
+        _data = data;
+        this.emitChange(); //Will trigger the listener in the component
     }
 
     getCurrentLocationCoords() {

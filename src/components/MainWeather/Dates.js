@@ -7,23 +7,23 @@ class Dates extends Component {
 		let { handleClick, activeDate } = this.props;
 		let weekDaysIndex = date_helpers.getCurrentWeekDays(date_helpers.DaysEnum, date_helpers.getCurrentDate());
 		let buttons = weekDaysIndex.map((day, index) => {
-											if(index == activeDate) {
-												return(
-												   <Button onClick={()=>this.props.handleClick(index)} className="active">{date_helpers.DaysEnum[day]}</Button>
-												)
-											} else {
-												return(
-												   <Button onClick={()=>this.props.handleClick(index)}>{date_helpers.DaysEnum[day]}</Button>
-												)
-											}
-											 		
-										})
-		return(
+			if (index == activeDate) {
+				return (
+					<Button onClick={() => this.props.handleClick(index)} className="active">{date_helpers.DaysEnum[day]}</Button>
+				)
+			} else {
+				return (
+					<Button onClick={() => this.props.handleClick(index)}>{date_helpers.DaysEnum[day]}</Button>
+				)
+			}
+
+		})
+		return (
 			<ButtonToolbar>
-		        <ButtonGroup>
-		        	{buttons}
-		        </ButtonGroup>
-		    </ButtonToolbar>
+				<ButtonGroup>
+					{buttons}
+				</ButtonGroup>
+			</ButtonToolbar>
 		)
 	}
 
