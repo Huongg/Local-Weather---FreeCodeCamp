@@ -24,12 +24,15 @@ class InputForm extends Component {
 	render() {
 		return (
 			<div className="input-categories">
-				<input type="text" className="btn-location"
-					placeholder="Search..."
-					onChange={this.handleChange}
-					onKeyPress={this.props.handleKeyPress} />
 				<button className="btn-location"
-					onClick={this.handleClick}>Use my location</button>
+					onChange={this.handleChange}
+					onKeyPress={this.props.handleKeyPress}>
+					<i class="fa fa-search"></i>
+				</button>
+				<button className="btn-location"
+					onClick={this.handleClick}> 
+					<i class="fa fa-map-marker"></i>
+				</button>
 			</div>
 		)
 	}

@@ -1,0 +1,33 @@
+.btn-toolbar {
+	justify-content: center;
+	margin-bottom: $margin;
+	margin-top: $margin;
+}
+
+.btn-location {
+	margin: $margin/2 $margin;
+	font-weight: $font-weight-regular;
+	width: $round-btn-width;
+	height: $round-btn-height;
+	background: darken($blue, 5%);  
+	border: 1px solid darken($blue, 6%);
+	box-shadow: 0px 2px 0 darken($dark-blue, 5%), 2px 4px 6px darken($dark-blue, 2%);
+	transition: all 150ms linear;
+	border-radius: 50%;
+}
+
+.btn-temp-unit {
+	@extend .btn-location;
+}
+
+
+.btn-ok {
+	@extend .btn-location;
+	width: $square-btn-width;
+	height: $square-btn-height;
+	border-radius: 0;
+}
+
+
+
+

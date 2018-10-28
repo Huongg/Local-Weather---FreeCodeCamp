@@ -1,5 +1,16 @@
 $margin: 20px;
 $radius: 50%;
 
-$button-width: 80px;
-$button-height: 60px;
+$square-btn-width: 120px;
+$square-btn-height: 60px;
+$round-btn-width: 50px;
+$round-btn-height: 50px;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+// Tablets and small desktops
+$screen-lg-min: 992px;
+// Large tablets and desktops
+$screen-xl-min: 1200px;
