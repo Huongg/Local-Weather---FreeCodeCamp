@@ -57,8 +57,6 @@ class SetupMenu extends Component {
 				<p>
 					This is a simple weather application that shows you the current local weather and
 					where it likely to be similar temperature.
-				    <br />
-					You're able to search for more different locations if you'd love to.
 				</p>
 				<InputForm
 					handleChange={this.handleChange}

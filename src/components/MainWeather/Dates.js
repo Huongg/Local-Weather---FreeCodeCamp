@@ -19,11 +19,11 @@ class Dates extends Component {
 
 		})
 		return (
-			<ButtonToolbar>
+			
 				<ButtonGroup>
 					{buttons}
 				</ButtonGroup>
-			</ButtonToolbar>
+		
 		)
 	}
 

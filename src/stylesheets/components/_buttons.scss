@@ -28,6 +28,15 @@
 	border-radius: 0;
 }
 
+.btn-group {
+	width: 100%;
+	margin: $margin 0; 
+	.btn {
+		width: 42px;
+		font-size: 14px;
+	}
+}
+
 
 
 

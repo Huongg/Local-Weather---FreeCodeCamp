@@ -75,13 +75,13 @@ class CurrentTemp extends Component {
 										<img className="icon" src={min_iconSrc} />
 										<p className="description">{min_desc}</p>
 									</Col>
-									<Col md={6}>
-										<h1 className="max-temp">{max_temp}
+									<Col md={6} className="current-temp-results">
+										<p className="max-temp">{max_temp}
 											{chosenUnit == "metric"
 												? <span>&deg;C</span>
 												: <span>&deg;F</span>
 											}
-										</h1>
+										</p>
 										<p className="min-temp">{min_temp}
 											{chosenUnit == "metric"
 												? <span>&deg;C</span>

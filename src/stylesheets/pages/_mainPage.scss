@@ -1,8 +1,5 @@
 .temp-container {
-	width: 700px;
-	margin-left: 25%;
 	color: $patina;
-	
 	.jumbotron {
 		background: $cream;
 		box-shadow: 10px 10px 5px $light-grey;
@@ -10,33 +7,38 @@
 }
 
 .country {
-	font-size: $h1-size;
+	font-size: $h1-size/2;
+	text-shadow: $outline-shadow; 
+	color: $dark-blue;
+
+	&:after {
+		text-shadow: $txt-shadow-thin; 
+		transform: $txt-pos-screen-small;
+	}
+}
+
+.current-temp-results {
+	display: inline;
 }
 
 .max-temp {
-	font-size: $p-size;
+	font-size: $p-size/2;
+	color: $dark-blue;
 }
 
-.min-tem {
-	font-size: $p-size/2;
+.min-temp {
+	font-size: $p-size/3;
+	color: $dark-blue;
 }
 
 .description {
 	font-size: $p-size/2;
+	color: $dark-blue;
 }
 
-.icon {
-	width: $square-btn-width;
-}
-
-.similartemps-container {
-	max-width: 700px;
-	margin-left: 25%;
-}
-	
 .img-thumbnail {
-	width: 220px;
-	height: 120px;
+	width: 140px;
+	height: 80px;
 	box-shadow: 6px 6px 5px $light-grey;
 }
 	

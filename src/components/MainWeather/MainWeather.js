@@ -2,17 +2,8 @@ import React, { Component } from 'react';
 import Dates from './Dates.js';
 import CurrentTemp from './CurrentTemp.js';
 import SimilarTemps from './SimilarTemps.js';
-
 import AppStore from '../../store/AppStore.js';
-
-
-// class MainWeather{
-// 	generateURL(urlPrefix, chosenUnit, apiKey){
-// 		return `${urlPrefix}lat=35&lon=139&units=${chosenUnitt}&APPID=${apiKey}`;
-// 	}
-// }
-
-
+import { Grid, Col, Row } from 'react-bootstrap';
 
 
 class MainWeather extends Component {
@@ -57,13 +48,23 @@ class MainWeather extends Component {
 		console.log(this.state);
 		return (
 			<div>
-				<Dates handleClick={this.handleClick}
-					activeDate={this.state.activeDate} />
-				<CurrentTemp chosenUnit={this.state.chosenUnit}
-					data={this.state.data}
-					activeDate={this.state.activeDate}>
-				</CurrentTemp>
-				<SimilarTemps />
+				<Grid>
+					<Row>
+						<Col xs={12} md={12}>
+								<Dates handleClick={this.handleClick}
+										 activeDate={this.state.activeDate} />
+						</Col>
+						<Col xs={12} md={12}>
+								<CurrentTemp chosenUnit={this.state.chosenUnit}
+												data={this.state.data}
+												activeDate={this.state.activeDate}>
+								</CurrentTemp>
+						</Col>
+						<Col xs={12} md={12}>
+							<SimilarTemps />
+						</Col>
+					</Row>
+				</Grid>
 			</div>
 		)
 	}

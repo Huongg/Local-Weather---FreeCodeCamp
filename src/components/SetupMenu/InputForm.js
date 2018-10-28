@@ -13,7 +13,6 @@ class InputForm extends Component {
 		if (event.charCode == 13) {
 			console.log('Pressed enter');
 			this.props.handleKeyPress(event);
-
 		}
 	}
 
