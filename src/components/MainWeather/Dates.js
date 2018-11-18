@@ -16,17 +16,13 @@ class Dates extends Component {
 					<Button onClick={() => this.props.handleClick(index)}>{date_helpers.DaysEnum[day]}</Button>
 				)
 			}
-
 		})
-		return (
-			
+		return (	
 				<ButtonGroup>
 					{buttons}
 				</ButtonGroup>
-		
 		)
 	}
-
 }
 
 export default Dates;

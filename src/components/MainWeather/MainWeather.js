@@ -4,7 +4,7 @@ import CurrentTemp from './CurrentTemp.js';
 import SimilarTemps from './SimilarTemps.js';
 import AppStore from '../../store/AppStore.js';
 import { Grid, Col, Row } from 'react-bootstrap';
-
+import ReactTimeout from 'react-timeout';
 
 class MainWeather extends Component {
 	constructor(props) {
@@ -13,20 +13,22 @@ class MainWeather extends Component {
 			chosenUnit: AppStore.getChosenUnit(),
 			data: {},
 			activeDate: 0,
-
+			hasCLicked: false
 		}
 	}
 
+	// todo
+	// state to store hasClicked => change
 
 	componentDidMount() {
 		AppStore.addChangeListener('STORE_WEATHER_LOADED', this.onStoreChange);
+		this.incrementingDates();
 	}
 
 	// Callbacks
 	onStoreChange = () => {
 		this.fetchingAPI();
 	}
-
 
 	// Logic
 	fetchingAPI() {
@@ -35,13 +37,22 @@ class MainWeather extends Component {
 		})
 	}
 
+	incrementingDates = () => {
+		let value = this.state.activeDate+1;
+		if (value === 6) {
+			value = 0;
+		}
 
+		this.setState({
+			activeDate: value
+		})
+		setTimeout(this.incrementingDates, 1000);
+	}
+	  
 	handleClick = (date) => {
-		console.log(date);
 		this.setState({
 			activeDate: date
 		})
-
 	}
 
 	render() {

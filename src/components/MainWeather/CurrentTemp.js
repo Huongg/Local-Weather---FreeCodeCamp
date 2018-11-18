@@ -37,8 +37,6 @@ class CurrentTemp extends Component {
 		let min_iconCode, min_iconSrc, min_desc, max_iconCode, max_iconSrc, max_desc = "N/A";
 		let temp_info = "N/A";
 
-
-
 		console.log(this.props);
 
 
